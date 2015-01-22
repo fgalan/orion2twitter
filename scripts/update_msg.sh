@@ -20,7 +20,9 @@
 # For those usages not covered by this license please contact with
 # iot_support at tid dot es
 
-(curl localhost:1026/v1/contextEntities/twitter/attributes/msg -s -S -X PUT --header 'Content-Type: application/json' --header 'Accept: application/json' -d @- | python -mjson.tool) <<EOF
+. ./CONFIG
+
+(curl $ORION_HOST:$ORION_PORT/v1/contextEntities/$ENTITY/attributes/msg -s -S -X PUT --header 'Content-Type: application/json' --header 'Accept: application/json' -d @- | python -mjson.tool) <<EOF
 {
     "value": "$1"
 }

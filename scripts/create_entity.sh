@@ -20,13 +20,15 @@
 # For those usages not covered by this license please contact with
 # iot_support at tid dot es
 
-(curl localhost:1026/v1/updateContext -s -S --header 'Content-Type: application/json' --header 'Accept: application/json' -d @- | python -mjson.tool) <<EOF
+. ./CONFIG
+
+(curl $ORION_HOST:$ORION_PORT/v1/updateContext -s -S --header 'Content-Type: application/json' --header 'Accept: application/json' -d @- | python -mjson.tool) <<EOF
 {
     "contextElements": [
         {
             "type": "twitter",
             "isPattern": "false",
-            "id": "twitter",
+            "id": "$ENTITY",
             "attributes": [
             {
                 "name": "msg",
