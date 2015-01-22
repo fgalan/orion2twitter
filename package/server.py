@@ -26,7 +26,7 @@ import random, re, json
 from tweet import tweet
 
 TWITTER_MAX_LENGTH = 140
-HASHTAG = '#CPRB8'
+HASHTAG = '#CPBR8'
 
 UNITS = {
     'hum': '%',
