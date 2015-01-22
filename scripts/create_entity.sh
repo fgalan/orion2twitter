@@ -33,7 +33,7 @@
             {
                 "name": "msg",
                 "type": "string",
-                "value": "Restarting Orion..."
+                "value": "reset"
             },
             {
                 "name": "tem",
