@@ -27,8 +27,8 @@
     "entities": [
         {
             "type": "twitter",
-            "isPattern": "false",
-            "id": "$ENTITY"
+            "isPattern": "true",
+            "id": ".*"
         }
     ],
     "attributes": [ ],
