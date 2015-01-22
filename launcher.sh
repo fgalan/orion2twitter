@@ -21,3 +21,5 @@
 # iot_support at tid dot es
 
 nohup python package/server.py &
+sleep 2s
+ps ax | grep server | grep -v grep 
