@@ -21,7 +21,7 @@
 __author__ = 'fermin'
 
 from flask import Flask, request, Response
-from requests import post
+from requests import put 
 import random, re, json
 from tweet import tweet
 
@@ -46,7 +46,7 @@ def reset():
         'Content-Type': 'application/json',
         'Accept': 'application/json'
     }
-    post(UPDATE_URL, data=json.dumps({'value': RESET_MSG}), headers=headers)
+    put(UPDATE_URL, data=json.dumps({'value': RESET_MSG}), headers=headers)
 
 @app.route('/notify', methods=['POST'])
 def notification():
