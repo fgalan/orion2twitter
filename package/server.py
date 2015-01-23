@@ -85,7 +85,7 @@ def notification():
         # Take only the first letters of the attribute, thus 'Give me temperature' and 'Give me tem' work the same
         attr = m.group(1)[:3]
         if attr in attrs.keys():
-            final_msg = 'Current ' + attr + ' at @Fiware stand is ' + attrs[attr] + ' #CPRBR8'
+            final_msg = 'Current ' + attr + ' at @FIware stand is ' + attrs[attr] + ' ' + HASHTAG 
         else:
             # Unknown attribute: nothing to publish
             return Response(200)
