@@ -93,7 +93,7 @@ def notification():
         # If the msg is a normal one, then pick two attribute at random
         attr1 = random.choice(attrs.keys())
         attr2 = random.choice(attrs.keys())
-        if attr1 == attr2:
+        while attr1 == attr2:
             attr2 = random.choice(attrs.keys())
         attrs_string = ' ' + attr1 + '=' + attrs[attr1] + ' ' + attr2 + '=' + attrs[attr2] + ' '
         max_user_msg = TWITTER_MAX_LENGTH - len(attrs_string) - len(HASHTAG)
