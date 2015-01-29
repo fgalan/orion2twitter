@@ -48,6 +48,13 @@ def reset():
     }
     put(UPDATE_URL, data=json.dumps({'value': RESET_MSG}), headers=headers)
 
+def pretty(s):
+    try:
+        f = float(s)
+        return '%.1f' % f
+    except ValueError:
+        return s
+
 @app.route('/notify', methods=['POST'])
 def notification():
     notification = request.json
@@ -57,7 +64,7 @@ def notification():
     msg = ''
     for attr in notification['contextResponses'][0]['contextElement']['attributes']:
         name = attr['name']
-        value = attr['value']
+        value = pretty(attr['value'])
         if name == 'msg':
             msg = value
         else:
